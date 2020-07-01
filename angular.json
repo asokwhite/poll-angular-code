@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "polling"
+    }
+  },
+  "defaultProject": "polling",
+  "cli": {
+    "analytics": "67dce479-0ed7-4e80-a151-fd360bcd9790"
+  }
 }

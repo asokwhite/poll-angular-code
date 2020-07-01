@@ -1,0 +1,30 @@
+<mat-card class="polling-mat-card">
+    <mat-card-content>
+        <section>
+            <form class="example-form">
+                <mat-form-field class="example-full-width width-100" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                        placeholder="Ex. pat@example.com" (blur)="checkUserVote()">
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </section>
+        <label class="example-margin">Nominees:</label>
+        <section class="example-section">
+            <mat-radio-group [(ngModel)]="labelPosition" [disabled]="!emailFormControl.valid && !emailVoteStatus" >
+                <mat-radio-button class="example-margin" [value]="cand.id" *ngFor="let cand of candidates">{{cand.value}} {{cand.id}}</mat-radio-button>
+            </mat-radio-group>
+        </section>
+        <section>
+            <div class="example-button-row">
+              <button mat-raised-button color="primary" [disabled]="!emailFormControl.valid || !emailVoteStatus || !labelPosition" (click)="vote()">Submit</button>
+            </div>
+          </section>
+    </mat-card-content>
+</mat-card>

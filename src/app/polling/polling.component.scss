@@ -1,0 +1,22 @@
+.width-100 {
+    width: 100%;
+}
+.polling-mat-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 51%;
+}
+
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
